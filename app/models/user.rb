@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   pay_customer stripe_attributes: :stripe_attributes
 
+  has_one :watched_video
+
 
 
 

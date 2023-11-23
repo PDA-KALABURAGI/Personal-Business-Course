@@ -17,7 +17,7 @@
 </div>
 
 <% @courses.each do |course| %>
-  <%= render "shared/course_cards", course: course %>
+  <%= render partial: "shared/course_cards", locals: {course: course, courses: @courses} %>
 <% end %>
 
 

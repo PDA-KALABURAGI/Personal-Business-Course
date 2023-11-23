@@ -1,10 +1,10 @@
 <div class="my-4">
   <div class="row text-black course-card">
-    <div class="col-md-5">
+    <div class="col d-flex">
       <% if course.thumbnail.attached? %>
-        <%= image_tag(course.thumbnail, class:"mx-auto ratio ratio-16x9 rounded-0 course-img" ,width:"auto", height:"auto") %>
+        <%= image_tag(course.thumbnail, class:"mx-auto ratio ratio-16x9 rounded-0 course-img" ,style: "max-height: 350px; max-width:350px;") %>
       <% else %>
-        <%= image_tag("course.jpg", class:"mx-auto ratio ratio-16x9 rounded-0 course-img" ,width:"auto", height:"auto") %>
+        <%= image_tag("course.jpg", class:"mx-auto ratio ratio-16x9 rounded-0 course-img" ,style: "max-height: 350px; max-width:350px;") %>
       <% end %>
     </div>
 
@@ -55,5 +55,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class='my-5'>
+    <%= paginate courses %>
   </div>
 </div>

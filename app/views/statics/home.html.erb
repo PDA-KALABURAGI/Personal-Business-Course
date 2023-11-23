@@ -3,6 +3,27 @@
   <h2 style="color: red;" class="text-center">YOU ARE AN ADMIN, YOU DON'T NEED TO BUY COURSE!</h2>
 <% end %>
 
+
+<% if current_user.watched_video.present? %>
+  <div class="card">
+    <div class="card-header fw-bold">
+      Recently Watched:
+    </div>
+    <div class="card-header">
+      <h2 class="badge text-bg-warning text-light"><i class="bi bi-suit-diamond-fill"></i> <%= current_user.watched_video.tut.course.title %></h2>
+      <h2 class="badge text-bg-warning text-light"><%= current_user.watched_video.tut.title %></h2>
+      <p class="card-text display-5"><%= current_user.watched_video.video_filename %></p>
+      <%= link_to video_title_course_tut_path(
+        current_user.watched_video.tut.course,
+        current_user.watched_video.tut,
+        video_title: current_user.watched_video.video_filename
+      ) do %>
+        <small class="btn btn-primary text-light"><i class="bi bi-play-circle"></i> Continue Watching...</small>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
 <% @my_courses.each do |course| %>
-  <%= render "shared/course_cards", course: course %>
+  <%= render partial: "shared/course_cards", locals: {course: course, courses: @my_courses} %>
 <% end %>

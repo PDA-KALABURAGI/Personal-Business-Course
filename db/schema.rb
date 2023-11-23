@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_18_105900) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_23_133943) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -175,6 +175,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_18_105900) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vids", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "tut_id", null: false
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_vids_on_course_id"
+    t.index ["tut_id"], name: "index_vids_on_tut_id"
+  end
+
+  create_table "watched_videos", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "tut_id", null: false
+    t.string "video_filename"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tut_id"], name: "index_watched_videos_on_tut_id"
+    t.index ["user_id"], name: "index_watched_videos_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "courses", "users"
@@ -185,4 +205,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_18_105900) do
   add_foreign_key "payments", "courses"
   add_foreign_key "payments", "users"
   add_foreign_key "tuts", "courses"
+  add_foreign_key "watched_videos", "tuts"
+  add_foreign_key "watched_videos", "users"
 end

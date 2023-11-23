@@ -3,7 +3,7 @@ Stripe.api_key = "sk_test_51NcIGEJdM2t98eyhyW2R6HDffCWMy4msgF16bpW3Mi20ihKOgpoPI
 
 class StaticsController < ApplicationController
   def home
-    @my_courses = current_user.access_to_courses.order(created_at: :desc)
+    @my_courses = current_user.access_to_courses.order(created_at: :desc).page(params[:page]).per(6)
     @user_payments = current_user.payments
   end
 end

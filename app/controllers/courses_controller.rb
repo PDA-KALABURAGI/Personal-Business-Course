@@ -16,7 +16,7 @@ class CoursesController < ApplicationController
   # GET Request 
   def index
     @q = Course.ransack(params[:q])
-    @courses = @q.result.order(created_at: :desc)
+    @courses = @q.result.order(created_at: :desc).page(params[:page]).per(6)
   end
 
   # GET Request
