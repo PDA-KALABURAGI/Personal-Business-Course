@@ -15,7 +15,7 @@
 
 ## Team Manager:
 
-🎨 **Srushti (Frontend Dev)**
+🎨 **Sadaf (Backend Dev)**
 
 ## Members:
 
