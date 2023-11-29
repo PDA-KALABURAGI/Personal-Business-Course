@@ -58,3 +58,16 @@ This is a comprehensive course selling platform developed for Peronsal Business.
 - Admin control with Single Table Inheritance (STI).
 - One-to-Many and Many-to-Many relationships in PostgreSQL database.
 - Robust backend server-side code for efficient processing.
+
+## Some Screenshots of the App
+![1](https://github.com/PDA-KALABURAGI/Personal-Business-Course/assets/83495797/ad93b197-f982-4874-8f85-730e7568dec4)
+
+![2](https://github.com/PDA-KALABURAGI/Personal-Business-Course/assets/83495797/d18acc71-cc4e-428b-98c0-015d37e1d5cb)
+
+![4](https://github.com/PDA-KALABURAGI/Personal-Business-Course/assets/83495797/c63be03d-6924-4785-9366-e7f6bf008f22)
+
+![payment](https://github.com/PDA-KALABURAGI/Personal-Business-Course/assets/83495797/202c801f-3f50-4914-bd36-c08248ceb870)
+
+![5](https://github.com/PDA-KALABURAGI/Personal-Business-Course/assets/83495797/1dd90b31-2365-4d18-b416-a71c1ae6c2de)
+
+![3](https://github.com/PDA-KALABURAGI/Personal-Business-Course/assets/83495797/dae944ab-b078-4d9b-b2ae-7de0697b0d3e)
